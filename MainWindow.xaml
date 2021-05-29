@@ -4,9 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EXE_Icon_Extractor"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Exe Icon Extractor" Height="398" Width="600" ResizeMode="NoResize">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="Background.jpg"/>
+        </Grid.Background>
+        <Grid HorizontalAlignment="Left" Height="342" Margin="10,10,0,0" VerticalAlignment="Top" Width="567">
+            <Grid.Background>
+                <SolidColorBrush Color="White" Opacity="0.9"/>
+            </Grid.Background>
+            <Label Content="Exe 文件路径:" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5,5,0,0"/>
+            <hc:TextBox x:Name="ExePathTextBox" HorizontalAlignment="Left" Height="23" Margin="35,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="440" IsReadOnly="True" FontSize="10"/>
+            <Button x:Name="FileBrowseBtn" Content="浏览" HorizontalAlignment="Left" Margin="480,34,0,0" VerticalAlignment="Top" Width="74" Background="#FF96C8FF" Click="FileBrowseBtn_Click"/>
+            <Frame Content="Frame" HorizontalAlignment="Left" Height="1" Margin="10,69,0,0" VerticalAlignment="Top" Width="544" Background="#FFD1D1D1"/>
+            <Label Content="预览:" HorizontalAlignment="Left" Margin="5,70,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <Image x:Name="ReviewIconImage" Height="128" Margin="220,83,219,131" VerticalAlignment="Center" Source="pack://siteoforigin:,,,/Resources/NoReview.png" HorizontalAlignment="Center"/>
+            <Frame Content="Frame" HorizontalAlignment="Left" Height="1" Margin="10,223,0,0" VerticalAlignment="Top" Width="544" Background="#FFD1D1D1"/>
+            <ComboBox x:Name="PixelComboBox" HorizontalAlignment="Left" Margin="454,75,0,0" VerticalAlignment="Top" Width="100" Height="24" SelectionChanged="PixelComboBox_SelectionChanged">
+                <ComboBoxItem Content="32x"/>
+                <ComboBoxItem Content="64x"/>
+                <ComboBoxItem Content="128x"/>
+            </ComboBox>
+            <Label Content="导出:" HorizontalAlignment="Left" Margin="5,224,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <Label x:Name="SavePathLabel" Content="保存路径:" HorizontalAlignment="Left" Margin="25,253,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
+            <TextBox x:Name="SavePathTextBox" HorizontalAlignment="Left" Height="29" Margin="97,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="378" IsReadOnly="True" FontSize="10"/>
+            <Button x:Name="SaveBrowseBtn" Content="浏览" HorizontalAlignment="Left" Margin="480,253,0,0" VerticalAlignment="Top" Width="74" Background="#FF96C8FF" IsEnabled="False" Click="SaveBrowseBtn_Click"/>
+            <Button x:Name="SaveImageBtn" Content="保存" HorizontalAlignment="Left" Margin="479,302,0,0" VerticalAlignment="Top" Width="75" Background="White" IsEnabled="False" Click="SaveImageBtn_Click"/>
+            <Label x:Name="SaveImageSizeLabel" Content="大小: 128x128" HorizontalAlignment="Left" Margin="27,302,0,0" VerticalAlignment="Top" Height="30" IsEnabled="False"/>
+            <Label x:Name="SaveImageTypeLabel" Content="格式: ico" HorizontalAlignment="Left" Margin="405,302,0,0" VerticalAlignment="Top" Height="30" IsEnabled="False"/>
+        </Grid>
     </Grid>
 </Window>
